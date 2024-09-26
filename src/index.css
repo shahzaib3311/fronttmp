@@ -1,0 +1,53 @@
+/* Import Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Economica&display=swap');
+
+@keyframes verticalMarqueeUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes verticalMarqueeDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.marquee-container {
+  position: relative;
+  overflow: hidden;
+  height: 700px; 
+  width: 250px;  
+}
+
+.marquee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marquee-up-content, .marquee-down-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: verticalMarqueeUp 20s linear infinite;
+}
+
+.marquee-down-content {
+  animation: verticalMarqueeDown 20s linear infinite; 
+}
+
+
+.marquee img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  margin-top: 3rem; 
+}
+
+
+.marquee-up-content, .marquee-down-content {
+  will-change: transform;
+}
